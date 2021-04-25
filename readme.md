@@ -1,6 +1,6 @@
 
 
-Alrd_rust  install 
+Alrd_rust  install  appversion:1.0 alrd_version 0.1.4
 
 1, 集成Alrd.a , Alrd.h 文件到NetworkExtension 扩展框架下 ；并且引入Alrd.h类
 2，添加PacketProcessor
@@ -13,5 +13,14 @@ Alrd_rust  install
 --------------------------------------------------------------------------------------------------------------
 
 
+Alrd_rust install appverison 2.0 alrd_version 0.2.2
 
+1, 集成Alrd.a , Alrd.h 文件到NetworkExtension 扩展框架下 ；并且引入Alrd.h类
+2,修改PacketTunnelProvider内代码，详情见demo
+3，数据原理：直接获取tun设备的流量，不经过tun2socks转发
+4，添加白名单功能，功能规则为 "allow/dency/direct" + " " + "ip/domain"
+(连接策略字符串 + 空格 + 具体的ip地址或者域名 ， 并且每一个规则之间用封号隔开)
+
+
+------------------------------------------------------------------------------------------------------------
 

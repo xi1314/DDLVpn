@@ -3,16 +3,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-void start(const char *http_address,
-           const char *socks_address,
-           const char *fake_dns_address,
-           const char *fake_pool,
-           const char *log_level,
-           const char *proxy_url,
-           const char *up_dns_address,
-           const char *domain_rules,
-           const char *ip_rules);
-
 void run_with_mode(const char *app_mode,
                    const char *http_address,
                    const char *socks_address,
@@ -22,9 +12,11 @@ void run_with_mode(const char *app_mode,
                    const char *proxy_url,
                    const char *up_dns_address,
                    const char *domain_rules,
-                   const char *ip_rules);
+                   const char *ip_rules,
+                   const char *tun_fd);
 
-void test_log(const char *http_address,
+void test_log(const char *app_mode,
+              const char *http_address,
               const char *socks_address,
               const char *fake_dns_address,
               const char *fake_pool,
@@ -32,7 +24,8 @@ void test_log(const char *http_address,
               const char *proxy_url,
               const char *up_dns_address,
               const char *domain_rules,
-              const char *ip_rules);
+              const char *ip_rules,
+              const char *tun_fd);
 
 void stop(void);
 
