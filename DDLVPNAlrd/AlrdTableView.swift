@@ -309,15 +309,7 @@ class AlrdTableView: UIView {
     
     @objc func tapOnSelect() {
        
-//         PopView.popUpContentView(self.selectView, direct: .popUpBottom, on: self.selectItemButton)
-//
-//        self.selectView.block = { idx in
-//
-//            print("idx--\(idx)")
-//            self.alrdVersion = idx
-//            self.selectItemButton.setTitle("V_\(idx)", for: .normal)
-//            PopView.hidenPopView()
-//        }
+
         
         
         self.load()

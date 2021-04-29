@@ -148,12 +148,14 @@ extension PacketTunnelProvider {
          DispatchQueue.global(qos: .background).async {
             
             let servert = "https://\(self.user):\(self.password)@\(self.server):\(self.port)"
+            NSLog("----servert----\(servert)")
             /**
              *app_mode: allow_gfw ? (domianrules and ip rules can not init) :(must init domain rules or ip rules)
              *socks_address: can not init
              *fakedns_address: can not init
+             *domain rules / ip rules :app_mode need "" or "default" , then read as fileprivate func dealDomains(_ list:[String]) -> String
              */
-            run_with_mode("", "127.0.0.1:\(self.port)", "127.0.0.1:9091", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", "", "", String(tunfd))
+            run_with_mode("allow_gfw", "127.0.0.1:\(self.port)", "127.0.0.1:9091", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", "", "", String(tunfd))
             NSLog("servert---\(servert)")
 
             }

@@ -24,3 +24,52 @@ Alrd_rust install appverison 2.0 alrd_version 0.2.2
 
 ------------------------------------------------------------------------------------------------------------
 
+Alrd_rust install appversion 2.1 alrd_version 0.2.5
+
+修改由于sdk http get 引发的ip sdk http resolver failed 的错误
+key function
+  
+  
+  void run_with_mode(const char *app_mode,
+                     const char *http_address,
+                     const char *socks_address,
+                     const char *fake_dns_address,
+                     const char *fake_pool,
+                     const char *log_level,
+                     const char *proxy_url,
+                     const char *up_dns_address,
+                     const char *domain_rules,
+                     const char *ip_rules,
+                     const char *tun_fd);
+                   
+   void stop(void);
+
+key words 
+
+app_mode:value = "allow_gfw" or ""
+fake_dns_address =  “127.0.0.1:53” (default) 或者 通过DNSConfig.getSystemDnsServers()[0] as! String 获取
+proxy_url = "加速服务器地址"
+domain_rules = 域名规则
+ip_rules = ip规则
+tun_fd : 获取方式：let tunFd = self.packetFlow.value(forKeyPath: "socket.fileDescriptor") as! Int32
+domain_rules/ip_rules 转化方法函数
+
+
+func dealDomains(_ list:[String]) -> String{
+    if  list.count == 0  {
+        return ""
+    }
+    var wdicts = [String]()
+    for item in list {
+        let newItem = "allow" + " " +  item
+        wdicts.append(newItem)
+    }
+    let wstring = wdicts.joined(separator: ";")
+    NSLog("dicts---\(wdicts)---wstirng:-\(wstring)")
+    return wstring
+}
+
+// 未做说明字段可以不用传入 
+
+change:sdk已解决httpproxy get无法响应的bug
+install：替换原来libarld4.a  

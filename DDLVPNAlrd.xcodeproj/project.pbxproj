@@ -15,8 +15,6 @@
 		753BA27A2577891900B0651D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753BA2782577891900B0651D /* LaunchScreen.storyboard */; };
 		753BA2AE257793C800B0651D /* AlrdTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BA2AD257793C800B0651D /* AlrdTableView.swift */; };
 		753BA2B325780F6100B0651D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BA2B225780F6100B0651D /* HomeViewController.swift */; };
-		753BA2BF2578286100B0651D /* PopAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BA2BB2578286100B0651D /* PopAnimationTool.m */; };
-		753BA2C02578286100B0651D /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BA2BC2578286100B0651D /* PopView.m */; };
 		753BA2E72578481B00B0651D /* TableSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BA2E62578481B00B0651D /* TableSelectView.swift */; };
 		753BA2FC257971F400B0651D /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BA2FB257971F400B0651D /* VpnManager.swift */; };
 		753BA3072579773800B0651D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753BA3062579773800B0651D /* NetworkExtension.framework */; };
@@ -75,10 +73,6 @@
 		753BA2912577891A00B0651D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753BA2AD257793C800B0651D /* AlrdTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlrdTableView.swift; sourceTree = "<group>"; };
 		753BA2B225780F6100B0651D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		753BA2BB2578286100B0651D /* PopAnimationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAnimationTool.m; sourceTree = "<group>"; };
-		753BA2BC2578286100B0651D /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
-		753BA2BD2578286100B0651D /* PopAnimationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAnimationTool.h; sourceTree = "<group>"; };
-		753BA2BE2578286100B0651D /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
 		753BA2D625782AC200B0651D /* DDLVpn_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDLVpn_OC.h; sourceTree = "<group>"; };
 		753BA2E62578481B00B0651D /* TableSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSelectView.swift; sourceTree = "<group>"; };
 		753BA2FB257971F400B0651D /* VpnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
@@ -147,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				753BA2FB257971F400B0651D /* VpnManager.swift */,
-				753BA2BA2578286100B0651D /* PopView */,
 				753BA26D2577891600B0651D /* AppDelegate.swift */,
 				753BA2712577891600B0651D /* ViewController.swift */,
 				753BA2732577891600B0651D /* Main.storyboard */,
@@ -179,17 +172,6 @@
 				753BA2912577891A00B0651D /* Info.plist */,
 			);
 			path = DDLVPNAlrdUITests;
-			sourceTree = "<group>";
-		};
-		753BA2BA2578286100B0651D /* PopView */ = {
-			isa = PBXGroup;
-			children = (
-				753BA2BB2578286100B0651D /* PopAnimationTool.m */,
-				753BA2BC2578286100B0651D /* PopView.m */,
-				753BA2BD2578286100B0651D /* PopAnimationTool.h */,
-				753BA2BE2578286100B0651D /* PopView.h */,
-			);
-			path = PopView;
 			sourceTree = "<group>";
 		};
 		753BA3052579773800B0651D /* Frameworks */ = {
@@ -324,13 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753BA2BF2578286100B0651D /* PopAnimationTool.m in Sources */,
 				753BA2FC257971F400B0651D /* VpnManager.swift in Sources */,
 				753BA8FA25798AA300B0651D /* DNSConfig.m in Sources */,
 				753BA2AE257793C800B0651D /* AlrdTableView.swift in Sources */,
 				753BA2722577891600B0651D /* ViewController.swift in Sources */,
 				753BA26E2577891600B0651D /* AppDelegate.swift in Sources */,
-				753BA2C02578286100B0651D /* PopView.m in Sources */,
 				753BA2E72578481B00B0651D /* TableSelectView.swift in Sources */,
 				753BA2B325780F6100B0651D /* HomeViewController.swift in Sources */,
 			);
@@ -512,7 +492,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -544,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ddl_vpn_test_adhoc_01;
@@ -579,7 +559,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -617,7 +597,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ddl_vpn_test_adhoc_extension_01;

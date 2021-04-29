@@ -8,7 +8,6 @@
 #ifndef DDLVpn_OC_h
 #define DDLVpn_OC_h
 
-#import "PopView.h"
 #import "DNSConfig.h"
 
 
