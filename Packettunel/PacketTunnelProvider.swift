@@ -38,8 +38,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         
         let tunFd = self.packetFlow.value(forKeyPath: "socket.fileDescriptor") as! Int32
         
-      
-//
         setTunnelNetworkSettings(networkSettings) { error in
                     guard error == nil else {
                         completionHandler(error)

@@ -73,3 +73,29 @@ func dealDomains(_ list:[String]) -> String{
 
 change:sdk已解决httpproxy get无法响应的bug
 install：替换原来libarld4.a  
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ version2.0 build 1.1
+ 
+ changelog :修改文档说明， 前面记录可以忽略
+ 
+ install 
+  导入libalrd4.a 文件 和相关头文件
+  函数参数说明：
+  
+  app_mode:value = "allow_gfw" or ""
+  fake_dns_address =  “127.0.0.1:53” (default) 或者 通过DNSConfig.getSystemDnsServers()[0] as! String 获取
+  proxy_url = "加速服务器地址"
+  domain_rules = 域名规则
+  ip_rules = ip规则
+  tun_fd : 获取方式：let tunFd = self.packetFlow.value(forKeyPath: "socket.fileDescriptor") as! Int32
+  domain_rules/ip_rules  传入规则: (allow/dency/direct) + " " + 域名或ip
+  未说明参数可以不用传入
+  
+  
+  
+  
+ 
+
