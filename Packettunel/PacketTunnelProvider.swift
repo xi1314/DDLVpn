@@ -35,6 +35,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
         let networkSettings = createTunnelSettings()
 
+//        self.confighttplocal(networkSettings: networkSettings)
         
         let tunFd = self.packetFlow.value(forKeyPath: "socket.fileDescriptor") as! Int32
         
@@ -86,7 +87,25 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 lastPath = defaultPath
             }
         }
+        
+        
 
+    }
+    
+    fileprivate func confighttplocal(networkSettings:NEPacketTunnelNetworkSettings) {
+        let proxySettings = NEProxySettings()
+        /**
+         *  这个地方的port 是我们加速服务器的port --29981
+         **/
+        proxySettings.httpEnabled = true
+        proxySettings.httpServer = NEProxyServer(address: "127.0.0.1", port: self.port)
+        proxySettings.httpsEnabled = true
+        proxySettings.httpsServer = NEProxyServer(address: "127.0.0.1", port: self.port)
+        proxySettings.excludeSimpleHostnames = true
+        // This will match all domains
+        proxySettings.matchDomains = [""]
+        proxySettings.exceptionList = ["api.smoot.apple.com","configuration.apple.com","xp.apple.com","smp-device-content.apple.com","guzzoni.apple.com","captive.apple.com","*.ess.apple.com","*.push.apple.com","*.push-apple.com.akadns.net"]
+        networkSettings.proxySettings = proxySettings
     }
 
     func parseConfig(_ conf:[String : Any]){
