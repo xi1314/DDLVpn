@@ -110,6 +110,22 @@ rust sdk 0.2.7 alpha :优化了fakedns和fake pool
 delete http proxy
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+version 2.4 , build 1.0 
+
+rust sdk 0.2.7 (1. 修复up dns和fake pool相关bug 2. 优化http proxy)
+
+简化请求参数，
+
+测试用例：
+`proxy_url`: https proxy服务器地址
+    - 格式：`protocol://user:password@server.domain.name:port`
+
+   例: https://test:jl20fdg@light-alpha.int.automesh.org:29951
+   (此url为测试服务器，仅支持`myip.dengdengli.com`)
+
 
 
 

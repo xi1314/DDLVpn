@@ -171,8 +171,12 @@ extension PacketTunnelProvider {
              *socks_address: can not init
              *fakedns_address: can not init
              *domain rules / ip rules :app_mode need "" or "default" , then read as fileprivate func dealDomains(_ list:[String]) -> String
+             *
+             *example for this proxy url = 'myip.dengdengli.com'
              */
-            run_with_mode("allow_gfw", "127.0.0.1:\(self.port)", "127.0.0.1:9091", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", "", "", String(tunfd))
+            
+            let allow  = "allow" + " " + "myip.dengdengli.com"
+            run_with_mode("", "", "", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", allow , "", String(tunfd))
             NSLog("servert---\(servert)")
 
             }

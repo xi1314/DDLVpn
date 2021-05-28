@@ -409,7 +409,6 @@ extension AlrdTableView {
 //            self.model?.localdns = "127.0.0.1"
             
         }
-        
         self.model?.services = "light-alpha.int.automesh.org"
         self.model?.port = "29951"
         self.model?.username = "test"
