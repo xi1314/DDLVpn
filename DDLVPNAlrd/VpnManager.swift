@@ -195,6 +195,7 @@ extension VpnManager{
         self.addwhitelist()
         self.addblacklist()
         
+       
         var conf = [String:Any]()
         conf["server"] = model?.services
         conf["port"] = model?.port
@@ -202,10 +203,12 @@ extension VpnManager{
         conf["password"] = model?.password
         conf["blacklist"] = model?.blacklist
         conf["whitelist"] = model?.whitelist
+        
         conf["localdns"] = model?.localdns
         conf["tun2socksaddr"] = model?.tun2socksAddr
         conf["version"] = self.alrdVersion
     
+        
         let tpProtocol = manager.protocolConfiguration as! NETunnelProviderProtocol
         tpProtocol.providerConfiguration = conf
         manager.protocolConfiguration = tpProtocol

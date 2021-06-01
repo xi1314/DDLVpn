@@ -22,6 +22,8 @@
 		753BA30F2579773800B0651D /* Packettunel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 753BA3042579773800B0651D /* Packettunel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		753BA8FA25798AA300B0651D /* DNSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BA8F925798AA300B0651D /* DNSConfig.m */; };
 		753BA8FC25798B0700B0651D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 753BA8FB25798AEE00B0651D /* libresolv.tbd */; };
+		7595CDE72665D49800DA3831 /* NetworkTestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595CDE62665D49800DA3831 /* NetworkTestManager.swift */; };
+		7595CDEA2665DF8A00DA3831 /* NetworkCheckViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595CDE92665DF8A00DA3831 /* NetworkCheckViewContorller.swift */; };
 		7597605C261C983600F6DB31 /* libalrd4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7597605B261C983600F6DB31 /* libalrd4.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		753BA8F825798AA300B0651D /* DNSConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNSConfig.h; sourceTree = "<group>"; };
 		753BA8F925798AA300B0651D /* DNSConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNSConfig.m; sourceTree = "<group>"; };
 		753BA8FB25798AEE00B0651D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		7595CDE62665D49800DA3831 /* NetworkTestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestManager.swift; sourceTree = "<group>"; };
+		7595CDE92665DF8A00DA3831 /* NetworkCheckViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheckViewContorller.swift; sourceTree = "<group>"; };
 		7597605A261C983500F6DB31 /* alrd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alrd.h; sourceTree = "<group>"; };
 		7597605B261C983600F6DB31 /* libalrd4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libalrd4.a; sourceTree = "<group>"; };
 		7597605D261C989400F6DB31 /* Packettunel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Packettunel-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				753BA2E62578481B00B0651D /* TableSelectView.swift */,
 				753BA8F825798AA300B0651D /* DNSConfig.h */,
 				753BA8F925798AA300B0651D /* DNSConfig.m */,
+				7595CDE62665D49800DA3831 /* NetworkTestManager.swift */,
+				7595CDE92665DF8A00DA3831 /* NetworkCheckViewContorller.swift */,
 			);
 			path = DDLVPNAlrd;
 			sourceTree = "<group>";
@@ -306,6 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7595CDEA2665DF8A00DA3831 /* NetworkCheckViewContorller.swift in Sources */,
+				7595CDE72665D49800DA3831 /* NetworkTestManager.swift in Sources */,
 				753BA2FC257971F400B0651D /* VpnManager.swift in Sources */,
 				753BA8FA25798AA300B0651D /* DNSConfig.m in Sources */,
 				753BA2AE257793C800B0651D /* AlrdTableView.swift in Sources */,
@@ -493,7 +501,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -526,7 +534,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ddl_vpn_test_adhoc_01;
@@ -562,7 +570,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -601,7 +609,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 2.4;
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddl.test.vpn.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ddl_vpn_test_adhoc_extension_01;

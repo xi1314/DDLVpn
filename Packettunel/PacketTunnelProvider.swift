@@ -35,7 +35,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
         let networkSettings = createTunnelSettings()
 
-//        self.confighttplocal(networkSettings: networkSettings)
+        self.confighttplocal(networkSettings: networkSettings)
         
         let tunFd = self.packetFlow.value(forKeyPath: "socket.fileDescriptor") as! Int32
         
@@ -139,11 +139,13 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         if let cPassword = conf["password"] as? String , cPassword.count > 0 {
             self.password = cPassword
         }
+        
         if let cKeywords = conf["whitelist"] as? [String], cKeywords.count > 0 {
             
             for keyword in cKeywords {
                 self.keywords.append(keyword)
             }
+            
         }
         if let blackwords = conf["blacklist"] as? [String], blackwords.count > 0 {
             
@@ -175,8 +177,8 @@ extension PacketTunnelProvider {
              *example for this proxy url = 'myip.dengdengli.com'
              */
             
-            let allow  = "allow" + " " + "myip.dengdengli.com"
-            run_with_mode("", "", "", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", allow , "", String(tunfd))
+            
+            run_with_mode("", "", "", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", self.dealDomains(self.keywords) , "", String(tunfd))
             NSLog("servert---\(servert)")
 
             }
@@ -203,9 +205,10 @@ extension PacketTunnelProvider {
         var wdicts = [String]()
         for item in list {
             let newItem = "allow" + " " +  item
-            
             wdicts.append(newItem)
         }
+        
+        
         
         let wstring = wdicts.joined(separator: ";")
         NSLog("dicts---\(wdicts)---wstirng:-\(wstring)")

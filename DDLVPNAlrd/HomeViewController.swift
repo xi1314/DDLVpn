@@ -13,6 +13,21 @@ class HomeViewController: UIViewController {
     var alrdView:AlrdTableView?
     
 
+    var networkcheckbtn:UIButton = {
+       
+        let btn = UIButton.init()
+        btn.setTitle("checkNet", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = UIColor.lightGray
+        btn.layer.cornerRadius = 20
+        btn.layer.borderWidth = 0.5
+        btn.layer.borderColor = UIColor.yellow.cgColor
+        btn.layer.masksToBounds = true
+        btn.addTarget(self, action: #selector(tapOnNetcheck), for: .touchUpInside)
+        return btn
+        
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +35,8 @@ class HomeViewController: UIViewController {
         
         self.alrdView = AlrdTableView.init(frame: .zero)
         self.view.addSubview(self.alrdView!)
+        self.view.addSubview(networkcheckbtn)
+        self.networkcheckbtn.frame = CGRect.init(x: self.view.frame.size.width / 2 - 80, y: self.view.frame.size.height - 80, width: 160, height: 40)
         
     }
     
@@ -63,6 +80,15 @@ class HomeViewController: UIViewController {
                     break
                    
         }
+        
+    }
+    
+    @objc func tapOnNetcheck() {
+        
+        let netvc = NetworkCheckViewContorller.init()
+        netvc.view.backgroundColor = .white
+        self.present(netvc, animated: true, completion: nil)
+        
         
     }
 
