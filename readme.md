@@ -140,4 +140,15 @@ rust sdk 0.2.7 (1. 修复up dns和fake pool相关bug 2. 优化http proxy)
  test for network (post)  time out
  
  
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+version 2.5 , build 1.0
+
+rust sdk 0.2.8 release
+
+run_with_mode方法参数修改，demo适配alrd 0.2.8
+
+unfished bug : unstable post request  caused by  http proxy sync with tun interface 
+
 

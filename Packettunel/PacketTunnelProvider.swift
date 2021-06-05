@@ -35,7 +35,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
         let networkSettings = createTunnelSettings()
 
-        self.confighttplocal(networkSettings: networkSettings)
+//        self.confighttplocal(networkSettings: networkSettings)
         
         let tunFd = self.packetFlow.value(forKeyPath: "socket.fileDescriptor") as! Int32
         
@@ -50,11 +50,14 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             DispatchQueue.global(qos: .userInitiated).async {
                 signal(SIGPIPE, SIG_IGN)
                 self.startWith(tunfd: tunFd)
+                
+                
             }
+          
 
                     completionHandler(nil)
 
-                }
+        }
         
     }
     
@@ -168,17 +171,16 @@ extension PacketTunnelProvider {
             
             let servert = "https://\(self.user):\(self.password)@\(self.server):\(self.port)"
             NSLog("----servert----\(servert)")
+            
             /**
-             *app_mode: allow_gfw ? (domianrules and ip rules can not init) :(must init domain rules or ip rules)
-             *socks_address: can not init
-             *fakedns_address: can not init
-             *domain rules / ip rules :app_mode need "" or "default" , then read as fileprivate func dealDomains(_ list:[String]) -> String
-             *
-             *example for this proxy url = 'myip.dengdengli.com'
-             */
+              * 参数 domain_rules 为测试样例，传参格式要求 为 策略 + “ ” + item
+              * 策略为（allow/ dency / direct）
+              * allow :允许走代理， dency ：为黑名单 direct：直连
+              */
             
+            let allow  = "allow" + " " + "myip.dengdengli.com"
             
-            run_with_mode("", "", "", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", self.dealDomains(self.keywords) , "", String(tunfd))
+            run_with_mode("127.0.0.1:\(self.port)", "127.0.0.1:8071", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", allow, "", "", String(tunfd))
             NSLog("servert---\(servert)")
 
             }
