@@ -197,16 +197,16 @@ extension VpnManager{
         
        
         var conf = [String:Any]()
-        conf["server"] = model?.services
-        conf["port"] = model?.port
-        conf["user"] = model?.username
-        conf["password"] = model?.password
-        conf["blacklist"] = model?.blacklist
-        conf["whitelist"] = model?.whitelist
-        
-        conf["localdns"] = model?.localdns
-        conf["tun2socksaddr"] = model?.tun2socksAddr
-        conf["version"] = self.alrdVersion
+//        conf["server"] = model?.services
+//        conf["port"] = model?.port
+//        conf["user"] = model?.username
+//        conf["password"] = model?.password
+//        conf["blacklist"] = model?.blacklist
+//        conf["whitelist"] = model?.whitelist
+//        
+//        conf["localdns"] = model?.localdns
+//        conf["tun2socksaddr"] = model?.tun2socksAddr
+//        conf["version"] = self.alrdVersion
     
         
         let tpProtocol = manager.protocolConfiguration as! NETunnelProviderProtocol

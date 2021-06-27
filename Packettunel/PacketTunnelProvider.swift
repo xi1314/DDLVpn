@@ -26,6 +26,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
         
 //
+        
+        
+        
         guard let conf = (protocolConfiguration as! NETunnelProviderProtocol).providerConfiguration else{
             NSLog("[ERROR] No ProtocolConfiguration Found")
             exit(EXIT_FAILURE)
@@ -35,7 +38,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
         let networkSettings = createTunnelSettings()
 
-//        self.confighttplocal(networkSettings: networkSettings)
+        self.confighttplocal(networkSettings: networkSettings)
         
         let tunFd = self.packetFlow.value(forKeyPath: "socket.fileDescriptor") as! Int32
         
@@ -180,7 +183,7 @@ extension PacketTunnelProvider {
             
             let allow  = "allow" + " " + "myip.dengdengli.com"
             
-            run_with_mode("127.0.0.1:\(self.port)", "127.0.0.1:8071", "127.0.0.1:53", "172.16.0.0/12", "trace", servert, "", allow, "", "", String(tunfd))
+            run_with_mode("127.0.0.1:\(self.port)", "127.0.0.1:8071", "127.0.0.1:53", "172.16.0.0/12", "debug", servert, "", allow, "", "", String(tunfd))
             NSLog("servert---\(servert)")
 
             }

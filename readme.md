@@ -152,3 +152,13 @@ run_with_mode方法参数修改，demo适配alrd 0.2.8
 unfished bug : unstable post request  caused by  http proxy sync with tun interface 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+version 2.7 ， build1.0
+
+rust sdk  0.2.10 release 
+
+sdk更新，替换libalrd4.a即可

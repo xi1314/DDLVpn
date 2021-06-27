@@ -56,6 +56,12 @@ class NetworkCheckViewContorller: UIViewController {
     
     @objc func tapOnget() {
         
+        //get 测试http接口
+        DispatchQueue.global().async {
+            NetworkTestManager.manager.get("https://api.apiopen.top/getJoke?page=1&count=2&type=video")
+            
+        }
+        
     }
     
     @objc func tapOnpost() {

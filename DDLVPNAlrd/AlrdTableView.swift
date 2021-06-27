@@ -299,6 +299,7 @@ class AlrdTableView: UIView {
         
         
         if VpnManager.shared.vpnStatus == .off {
+
             VpnManager.shared.connect()
         }else {
             VpnManager.shared.disconnect()
